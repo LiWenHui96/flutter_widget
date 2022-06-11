@@ -17,6 +17,7 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends BaseState<SplashPage> {
   FlutterLogoStyle _style = FlutterLogoStyle.markOnly;
   final double iconSize = 160;
+  final Duration duration = const Duration(milliseconds: 1500);
 
   @override
   void initState() {
@@ -37,10 +38,10 @@ class _SplashPageState extends BaseState<SplashPage> {
           width: iconSize,
           height: iconSize,
           curve: Curves.fastOutSlowIn,
-          duration: const Duration(seconds: 3),
+          duration: duration,
           onEnd: () {
             Future<void>.delayed(
-              const Duration(milliseconds: 500),
+              duration,
               () => Navigator.pushReplacementNamed(context, Routes.main),
             );
           },
