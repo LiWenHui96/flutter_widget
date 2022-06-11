@@ -8,6 +8,7 @@ import 'package:flutter_widget/routes.dart';
 /// @Date: 2022/6/11
 
 class SplashPage extends StatefulWidget {
+  /// 外部调用
   const SplashPage({Key? key}) : super(key: key);
 
   @override

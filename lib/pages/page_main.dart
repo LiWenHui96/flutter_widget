@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 /// @Date: 2022/6/11
 
 class MainPage extends StatefulWidget {
+  /// 外部调用
   const MainPage({Key? key}) : super(key: key);
 
   @override

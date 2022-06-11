@@ -16,14 +16,17 @@ Future<void> main() async {
 
 /// 程序主体
 class MyApp extends StatelessWidget {
+  /// 外部调用
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Widget',
       routes: Routes.routes,
       initialRoute: Routes.initialRoute,
+      title: 'Flutter Widget',
+      theme: ThemeData(brightness: Brightness.light),
+      darkTheme: ThemeData(brightness: Brightness.dark),
       locale: const Locale('zh', 'CN'),
       localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
         GlobalMaterialLocalizations.delegate,
