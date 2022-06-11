@@ -18,6 +18,9 @@ class AbsorbPointerPage extends StatefulWidget {
 class _AbsorbPointerPageState extends BasePageState<AbsorbPointerPage> {
   bool _absorbing = false;
 
+  String url =
+      'https://api.flutter.dev/flutter/widgets/AbsorbPointer-class.html';
+
   @override
   Widget build(BuildContext context) {
     final Widget child = Column(
@@ -50,6 +53,17 @@ class _AbsorbPointerPageState extends BasePageState<AbsorbPointerPage> {
               TextSpan(text: ' 的组件，'),
               TextSpan(text: '可以禁止多个组件，无须一个一个组件去处理。工作原理：接收点击事件后，消耗掉事件。'),
             ],
+          ),
+        ),
+        const SizedBox(height: 5),
+        GestureDetector(
+          onTap: () async => toLaunchUrl(url),
+          child: Text(
+            url,
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.secondary,
+              decoration: TextDecoration.underline,
+            ),
           ),
         ),
       ],

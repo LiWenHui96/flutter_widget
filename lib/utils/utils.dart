@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 export 'util_log.dart';
 
@@ -54,6 +55,18 @@ void showSnackBar(BuildContext context, String message) {
       duration: const Duration(seconds: 2),
     ),
   );
+}
+
+/// 链接跳转
+Future<bool> toLaunchUrl(String url) async {
+  final Uri uri = Uri.parse(url);
+  if (await canLaunchUrl(uri)) {
+    /// Android 平台 采用跳转到外部浏览器
+    /// 其他平台，采用平台默认方式
+    return launchUrl(uri);
+  } else {
+    throw ArgumentError('Could not launch $url');
+  }
 }
 
 /// 消除 SnackBar
