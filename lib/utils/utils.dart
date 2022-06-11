@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -41,3 +43,23 @@ Future<void> redoOrientation({bool isPortrait = true}) async {
     ]);
   }
 }
+
+/// 展示 SnackBar
+void showSnackBar(BuildContext context, String message) {
+  ScaffoldMessenger.of(context).removeCurrentSnackBar();
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(message),
+      behavior: SnackBarBehavior.floating,
+      duration: const Duration(seconds: 2),
+    ),
+  );
+}
+
+/// 消除 SnackBar
+void removeSnackBar(BuildContext context) {
+  ScaffoldMessenger.of(context).removeCurrentSnackBar();
+}
+
+/// 获取设备底边栏高度
+double get bottomBarHeight => MediaQueryData.fromWindow(window).padding.bottom;

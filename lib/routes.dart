@@ -29,6 +29,8 @@ class Routes {
 
   /// Widgets
   static Map<String, WidgetBuilder> get widgets {
-    return <String, WidgetBuilder>{};
+    return <String, WidgetBuilder>{
+      'AbsorbPointer': (_) => const AbsorbPointerPage(),
+    };
   }
 }
