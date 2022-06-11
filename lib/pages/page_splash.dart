@@ -35,7 +35,10 @@ class _SplashPageState extends BasePageState<SplashPage> {
     return Scaffold(
       body: Center(
         child: AnimatedContainer(
-          decoration: FlutterLogoDecoration(style: _style),
+          decoration: FlutterLogoDecoration(
+            textColor: Theme.of(context).colorScheme.secondary,
+            style: _style,
+          ),
           width: iconSize,
           height: iconSize,
           curve: Curves.fastOutSlowIn,

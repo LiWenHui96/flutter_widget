@@ -38,7 +38,11 @@ class _AbsorbPointerPageState extends BasePageState<AbsorbPointerPage> {
           absorbing: _absorbing,
           child: GestureDetector(
             onTap: () => showSnackBar(context, '红色框点击了'),
-            child: Container(width: 160, height: 160, color: Colors.blue),
+            child: Container(
+              width: 160,
+              height: 160,
+              color: Theme.of(context).colorScheme.secondary,
+            ),
           ),
         ),
         const Spacer(),
