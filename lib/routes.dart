@@ -16,12 +16,19 @@ class Routes {
 
   /// 路由管理
   static Map<String, WidgetBuilder> get routes {
-    return <String, WidgetBuilder>{
+    final Map<String, WidgetBuilder> map = <String, WidgetBuilder>{
       splash: (_) => const SplashPage(),
       main: (_) => const MainPage(),
-    };
+    }..addAll(widgets);
+
+    return map;
   }
 
   /// 根路由
   static String get initialRoute => splash;
+
+  /// Widgets
+  static Map<String, WidgetBuilder> get widgets {
+    return <String, WidgetBuilder>{};
+  }
 }

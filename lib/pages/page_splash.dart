@@ -15,7 +15,7 @@ class SplashPage extends StatefulWidget {
   State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashPageState extends BaseState<SplashPage> {
+class _SplashPageState extends BasePageState<SplashPage> {
   FlutterLogoStyle _style = FlutterLogoStyle.markOnly;
   final double iconSize = 160;
   final Duration duration = const Duration(milliseconds: 1500);

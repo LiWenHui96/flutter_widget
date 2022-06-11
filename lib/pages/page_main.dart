@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_widget/config/config.dart';
+import 'package:flutter_widget/routes.dart';
 
 /// @Describe:
 ///
@@ -13,33 +16,30 @@ class MainPage extends StatefulWidget {
   State<MainPage> createState() => _MainPageState();
 }
 
-class _MainPageState extends State<MainPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _MainPageState extends BasePageState<MainPage> {
   @override
   Widget build(BuildContext context) {
+    final List<String> list = Routes.widgets.keys.toList();
+
+    final Widget child = ListView.builder(
+      itemBuilder: (BuildContext context, int index) {
+        final ElevatedButton child = ElevatedButton(
+          onPressed: () async => Navigator.pushNamed(context, list[index]),
+          child: Text(list[index]),
+        );
+
+        return Container(
+          margin: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: child,
+        );
+      },
+      itemCount: list.length,
+    );
+
     return Scaffold(
       appBar: AppBar(title: const Text('Flutter Widget')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text('$_counter', style: Theme.of(context).textTheme.headline4),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      body: CupertinoScrollbar(child: child),
     );
   }
 }
