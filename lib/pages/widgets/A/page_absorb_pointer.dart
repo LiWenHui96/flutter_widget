@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget/config/config.dart';
 import 'package:flutter_widget/utils/utils.dart';
 
-/// @Describe:
+/// @Describe: AbsorbPointer
 ///
 /// @Author: LiWeNHuI
 /// @Date: 2022/6/11
@@ -73,7 +73,7 @@ class _AbsorbPointerPageState extends BasePageState<AbsorbPointerPage> {
       appBar: AppBar(title: const Text('AbsorbPointer')),
       body: Container(
         width: double.infinity,
-        padding: const EdgeInsets.all(10)
+        padding: const EdgeInsets.all(15)
             .add(EdgeInsets.only(bottom: bottomBarHeight)),
         child: child,
       ),

@@ -1,9 +1,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="io.widget">
+
+    <!-- 访问网络状态-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
    <application
-        android:label="Flutter Widget"
-        android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+       android:name=".MyApplication"
+       android:allowBackup="true"
+       android:fullBackupOnly="true"
+       android:icon="@mipmap/ic_launcher"
+       android:label="Flutter Widget"
+       android:networkSecurityConfig="@xml/network_security_config"
+       android:requestLegacyExternalStorage="true"
+       android:theme="@style/AppTheme"
+       android:usesCleartextTraffic="true"
+       tools:targetApi="n">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -31,4 +43,13 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+
+    <!-- url_launcher 为API级别30及以上提供所需的可见性配置-->
+    <!-- Provide required visibility configuration for API level 30 and above-->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
 </manifest>
