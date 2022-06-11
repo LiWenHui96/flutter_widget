@@ -30,7 +30,8 @@ class Routes {
   /// Widgets
   static Map<String, WidgetBuilder> get widgets {
     return <String, WidgetBuilder>{
-      'AbsorbPointer': (_) => const AbsorbPointerPage(),
+      'Widget: AbsorbPointer': (_) => const AbsorbPointerPage(),
+      'Painting: Accumulator': (_) => const AccumulatorPage(),
     };
   }
 }
