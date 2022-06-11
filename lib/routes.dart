@@ -32,6 +32,7 @@ class Routes {
     return <String, WidgetBuilder>{
       'Widget: AbsorbPointer': (_) => const AbsorbPointerPage(),
       'Painting: Accumulator': (_) => const AccumulatorPage(),
+      'Widget: ActionListener': (_) => const ActionListenerPage(),
     };
   }
 }

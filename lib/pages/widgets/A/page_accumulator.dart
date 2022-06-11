@@ -34,7 +34,7 @@ class _AccumulatorPageState extends State<AccumulatorPage> {
                 text: '累加器',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              TextSpan(text: '，它可以在一定程度上替换你的 i++ 操作'),
+              TextSpan(text: '，它可以在一定程度上替换你的 i++ 操作。'),
             ],
           ),
         ),
