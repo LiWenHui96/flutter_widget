@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget/config/config.dart';
 import 'package:flutter_widget/utils/utils.dart';
 
 /// @Describe: Accumulator
@@ -14,7 +15,7 @@ class AccumulatorPage extends StatefulWidget {
   State<AccumulatorPage> createState() => _AccumulatorPageState();
 }
 
-class _AccumulatorPageState extends State<AccumulatorPage> {
+class _AccumulatorPageState extends BasePageState<AccumulatorPage> {
   Accumulator accumulator = Accumulator();
 
   String url =

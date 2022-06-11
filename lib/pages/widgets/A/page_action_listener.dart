@@ -1,8 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_widget/config/config.dart';
 import 'package:flutter_widget/utils/utils.dart';
 
-/// @Describe:
+/// @Describe: ActionListener
 ///
 /// @Author: LiWeNHuI
 /// @Date: 2022/6/11
@@ -15,7 +16,7 @@ class ActionListenerPage extends StatefulWidget {
   State<ActionListenerPage> createState() => _ActionListenerPageState();
 }
 
-class _ActionListenerPageState extends State<ActionListenerPage> {
+class _ActionListenerPageState extends BasePageState<ActionListenerPage> {
   MyAction myAction = MyAction();
 
   bool openListener = false;
