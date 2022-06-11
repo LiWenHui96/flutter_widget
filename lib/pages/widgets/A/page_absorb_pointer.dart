@@ -54,22 +54,11 @@ class _AbsorbPointerPageState extends BasePageState<AbsorbPointerPage> {
                 text: '输入/点击/手势',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              TextSpan(text: ' 的组件，'),
-              TextSpan(text: '可以禁止多个组件，无须一个一个组件去处理。工作原理：接收点击事件后，消耗掉事件。'),
+              TextSpan(text: ' 的组件，可以禁止多个组件，无须一个一个组件去处理。工作原理：接收点击事件后，消耗掉事件。'),
             ],
           ),
         ),
-        const SizedBox(height: 5),
-        GestureDetector(
-          onTap: () async => toLaunchUrl(url),
-          child: Text(
-            url,
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.secondary,
-              decoration: TextDecoration.underline,
-            ),
-          ),
-        ),
+        launchUrlWidget(context, url),
       ],
     );
 

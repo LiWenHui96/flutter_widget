@@ -57,6 +57,23 @@ void showSnackBar(BuildContext context, String message) {
   );
 }
 
+/// 链接跳转的小组件
+Widget launchUrlWidget(BuildContext context, String url) {
+  return GestureDetector(
+    onTap: () async => toLaunchUrl(url),
+    child: Container(
+      margin: const EdgeInsets.only(top: 5),
+      child: Text(
+        url,
+        style: TextStyle(
+          color: Theme.of(context).colorScheme.secondary,
+          decoration: TextDecoration.underline,
+        ),
+      ),
+    ),
+  );
+}
+
 /// 链接跳转
 Future<bool> toLaunchUrl(String url) async {
   final Uri uri = Uri.parse(url);
